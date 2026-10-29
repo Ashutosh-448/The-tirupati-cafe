@@ -67,6 +67,19 @@ export const GallerySection: React.FC = () => {
               <img
                 src={item.image}
                 alt={item.alt}
+                onError={(e) => {
+                  const fallbackMap: Record<string, string> = {
+                    'g-1': 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1000&q=80',
+                    'g-2': 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1000&q=80',
+                    'g-3': 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1000&q=80',
+                    'g-4': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80',
+                    'g-5': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1000&q=80',
+                    'g-6': 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=1000&q=80',
+                  };
+                  if (fallbackMap[item.id] && e.currentTarget.src !== fallbackMap[item.id]) {
+                    e.currentTarget.src = fallbackMap[item.id];
+                  }
+                }}
                 className="w-full h-full object-cover group-hover:scale-108 transition-transform duration-500 ease-out"
                 loading="lazy"
                 referrerPolicy="no-referrer"

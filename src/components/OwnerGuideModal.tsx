@@ -188,7 +188,7 @@ npm run dev`}
 
               <ol className="list-decimal pl-5 space-y-2 text-xs">
                 <li>
-                  Place your high-resolution food and cafe photos in the <code className="font-mono font-bold">/src/assets/images/</code> folder (or upload them to a CDN).
+                  Place your high-resolution food and cafe photos in the <code className="font-mono font-bold">/public/images/</code> folder (or upload them to a CDN).
                 </li>
                 <li>
                   Open <code className="font-mono font-bold">/src/data/restaurantData.ts</code>.
@@ -204,7 +204,7 @@ export const SIGNATURE_DISHES: SignatureDish[] = [
   {
     id: 'ghee-podi-masala-dosa',
     name: 'Ghee Podi Masala Dosa',
-    image: '/src/assets/images/my_real_dosa_photo.jpg', // <-- your new photo
+    image: '/images/my_real_dosa_photo.jpg', // <-- placed in /public/images/
     // ...
   }
 ];`}

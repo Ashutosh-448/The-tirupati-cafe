@@ -95,14 +95,14 @@ export const Hero: React.FC<HeroProps> = ({ onExploreMenu }) => {
           <div className="lg:col-span-5 relative">
             <div className="relative rounded-2xl overflow-hidden border border-[#dfd5c4] shadow-2xl bg-[#f2e9dc]">
               <img
-                src="/src/assets/images/tirupati_hero_dosa_1793276412570.jpg"
+                src="/images/tirupati_hero_dosa.jpg"
                 alt="Crispy golden South Indian dosa served on banana leaf with sambar and fresh chutneys at The Tirupati Cafe Mohali"
                 className="w-full h-[380px] sm:h-[460px] object-cover hover:scale-105 transition-transform duration-700 ease-out"
                 loading="eager"
                 referrerPolicy="no-referrer"
                 onError={(e) => {
-                  // Fallback to stylized container if image file cannot be read
-                  e.currentTarget.style.display = 'none';
+                  // Fallback to high-availability authentic South Indian Dosa photograph if local file missing
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1200&q=80';
                 }}
               />
 

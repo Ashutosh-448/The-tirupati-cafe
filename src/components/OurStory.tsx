@@ -13,11 +13,14 @@ export const OurStory: React.FC = () => {
           <div className="lg:col-span-5 order-2 lg:order-1 relative">
             <div className="relative rounded-2xl overflow-hidden border border-[#ded3be] shadow-xl bg-white p-2">
               <img
-                src="/src/assets/images/dish_chutneys_sambar_1793276429801.jpg"
+                src="/images/dish_chutneys_sambar.jpg"
                 alt="Traditional South Indian accompaniments with freshly tempered sambar and stone-ground chutneys"
                 className="w-full h-80 sm:h-96 object-cover rounded-xl"
                 loading="lazy"
                 referrerPolicy="no-referrer"
+                onError={(e) => {
+                  e.currentTarget.src = 'https://images.unsplash.com/photo-1610192244261-3f33de3f55e4?auto=format&fit=crop&w=1200&q=80';
+                }}
               />
               <div className="p-4 text-left">
                 <span className="text-[11px] font-semibold uppercase tracking-wider text-[#8c6d48] block mb-1">

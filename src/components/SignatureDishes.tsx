@@ -9,8 +9,22 @@ interface SignatureDishesProps {
 export const SignatureDishes: React.FC<SignatureDishesProps> = ({ onSelectDish }) => {
   const [imageErrors, setImageErrors] = useState<Record<string, boolean>>({});
 
-  const handleImageError = (id: string) => {
-    setImageErrors((prev) => ({ ...prev, [id]: true }));
+  const DISH_FALLBACKS: Record<string, string> = {
+    'ghee-podi-masala-dosa': 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1000&q=80',
+    'ghee-plain-dosa': 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1000&q=80',
+    'garlic-benne-dosa': 'https://images.unsplash.com/photo-1668236543090-82eba5ee5976?auto=format&fit=crop&w=1000&q=80',
+    'ghee-podi-idli': 'https://images.unsplash.com/photo-1589301760014-d929f3979dbc?auto=format&fit=crop&w=1000&q=80',
+    'filter-coffee': 'https://images.unsplash.com/photo-1514432324607-a09d9b4aefdd?auto=format&fit=crop&w=1000&q=80',
+    'dahi-bada': 'https://images.unsplash.com/photo-1601050690597-df0568f70950?auto=format&fit=crop&w=1000&q=80',
+  };
+
+  const handleImageError = (id: string, e: React.SyntheticEvent<HTMLImageElement>) => {
+    const fallback = DISH_FALLBACKS[id];
+    if (fallback && e.currentTarget.src !== fallback) {
+      e.currentTarget.src = fallback;
+    } else {
+      setImageErrors((prev) => ({ ...prev, [id]: true }));
+    }
   };
 
   return (
@@ -54,7 +68,7 @@ export const SignatureDishes: React.FC<SignatureDishesProps> = ({ onSelectDish }
                   <img
                     src={dish.image}
                     alt={`${dish.name} at The Tirupati Cafe Mohali`}
-                    onError={() => handleImageError(dish.id)}
+                    onError={(e) => handleImageError(dish.id, e)}
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500 ease-out"
                     loading="lazy"
                     referrerPolicy="no-referrer"
