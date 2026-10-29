@@ -1,0 +1,6 @@
+{
+  "name": "The Tirupati Cafe — Mohali",
+  "description": "Authentic South Indian vegetarian food concept in Phase 10, Mohali. Crispy dosas, podi idli, and traditional filter coffee.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

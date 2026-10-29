@@ -1,0 +1,26 @@
+@import "tailwindcss";
+
+@layer base {
+  body {
+    font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+    background-color: #fbf8f3;
+    color: #2e241e;
+  }
+
+  h1, h2, h3, h4 {
+    font-family: 'Playfair Display', Georgia, serif;
+    letter-spacing: -0.015em;
+  }
+}
+
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.font-body {
+  font-family: 'DM Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+}
